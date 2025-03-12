@@ -38,10 +38,21 @@ function showResult(myEuroResult, myDollarResult, myDanishAmount) {
 
 }
 
-/* skriv din kode herunder.
+/* skriv din kode herunder... */
+// Funktion der returnerer en veksel udregning
+function calculateExchange(danishAmount, exchangeRate) {
+    return danishAmount * exchangeRate;
+}
 
+// Funktion der kalder calculateExchange to gange med forskellige vekselrater
+function makeExchange(myEuroRate, myDollarRate, myDanishAmount) {
+    let danishAmount = parseFloat(myDanishAmount);
+    let euroRate = parseFloat(myEuroRate);
+    let dollarRate = parseFloat(myDollarRate); 
+    if (isNaN(danishAmount) || isNaN(euroRate) || isNaN(dollarRate)) {
+        alert("Indtast venligst gyldige tal for alle felter.");
+        return;
+    }
 
-
-
-
-
+    let myDollars = calculateExchange(danishAmount, dollarRate);
+    let myEuros = calculateExchange(danishAmount, euroRate);}
